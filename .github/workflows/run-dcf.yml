@@ -1,0 +1,18 @@
+
+name: Run DCF Valuation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "dcf.py"
+
+jobs:
+  dcf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run DCF
+        run: python3 dcf.py
